@@ -1,6 +1,7 @@
 require 'rack'
 require 'rack/rewrite'
 require_relative './lib/server'
+require_relative './lib/search'
 
 module Bookbinder
   class RackApp
