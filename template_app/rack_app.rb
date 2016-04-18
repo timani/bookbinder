@@ -21,6 +21,9 @@ module Bookbinder
           use MailFeedback, client
           run Bookbinder::NotFound.new('public/404.html')
         end
+        map '/search' do
+          run Bookbinder::Search
+        end
         if ENV['CUSTOM_ROOT']
           map ENV['CUSTOM_ROOT'] do
             run Bookbinder::Server
