@@ -19,7 +19,9 @@ module Bookbinder
         search_results: results['hits']['hits']
       }
 
-      [200, {'Content-Type' => 'application/json'}, [erb.result(search_data)]]
+      [200, {'Content-Type' => 'text/html'}, [erb.result(search_data)]]
+    rescue e
+      [500, {'Content-Type' => 'text/plain'}, [e.backtrace.join("\n")]]
     end
   end
 end
