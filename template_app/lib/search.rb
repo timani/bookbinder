@@ -20,7 +20,7 @@ module Bookbinder
       }
 
       [200, {'Content-Type' => 'text/html'}, [erb.result(search_data)]]
-    rescue e
+    rescue Exception => e
       [500, {'Content-Type' => 'text/plain'}, [e.backtrace.join("\n")]]
     end
   end
