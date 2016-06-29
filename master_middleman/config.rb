@@ -8,7 +8,7 @@ config.each do |k, v|
   set k, v
 end
 
-set :markdown_engine, :redcarpet
+set :markdown_engine, :kramdown
 set :markdown, :layout_engine => :erb,
                :tables => true,
                :autolink => true,
